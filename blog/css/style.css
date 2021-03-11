@@ -1,0 +1,312 @@
+/* TO GET AN IDEA OF THE CSS YOU WILL LIKELY BE USING, SEE THE LISTS BELOW. */
+
+        /* 
+        
+        Spacing 
+
+            - padding (shorthand and/or specific properties like padding-bottom, etc.)
+
+            - margin, (shorthand and/or specific properties like margin-top, etc.)
+
+            - letter-spacing, word-spacing, line-height
+
+            - width, max-width, min-width
+            - height, max-height, min-height
+
+        Typography 
+
+            - font-family, font-size, font-style, font-weight
+
+            - text-decoration, text-align
+
+            - color
+
+            - text-shadow, text-transform
+
+        Box, Layout and Border 
+
+            - border (shorthand and/or specific properties like border-top, border-bottom-radius, border-width, etc.)
+
+            - box-shadow
+
+            - display, float, align-items, align-content
+
+            - grid-template-columns, grid-column-gap
+
+            - transform
+
+        Other
+
+            - :nth()-child (to target specific child elements)
+
+            - :focus, :hover, :active (to target link states)
+
+            - @font-face or @import (to import typefaces)
+
+        */
+
+/* ------ START WRITING YOUR CODE BELOW ------ */
+
+/* GENERAL SETUP */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size:16px;
+}
+
+body {
+    margin: 1.5rem auto;
+    width:90%;
+    min-width:56.25rem;
+}
+
+/* TYPEFACES */
+
+@font-face {
+    font-family: "lato";
+    src: url("../fonts/sans-serif/lato-regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "montserrat";
+    src: url("../fonts/sans-serif/montserrat-regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "opensans";
+    src: url("../fonts/sans-serif/opensans-regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/sans-serif/roboto-regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "josefinslab";
+    src: url("../fonts/serif/josefinslab-regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "robotoslab";
+    src: url("../fonts/serif/robotoslab-regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "rozhaone";
+    src: url("../fonts/serif/rozhaone-regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ultra";
+    src: url("../fonts/serif/ultra-regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* TYPOGRAPHY */
+
+html {
+    font-family: roboto;
+    font-size: .97rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.highlight {
+    font-family: ultra;
+    font-weight: lighter;
+    font-size: 3.25rem;
+    color: white;
+    border-radius: 9px 0px;
+    padding: .5rem;
+    background-color: darkred;
+    text-transform: uppercase;
+    padding: 0 1rem;
+}
+
+p {
+    line-height: 1.5rem
+}
+
+h2, h3 {
+    font-family: montserrat;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: lato;
+    font-size: 1.5rem;
+}
+
+time {
+    font-style: italic;
+    font-size: .75rem;
+    float: left;
+}
+
+aside p {
+    font-size: .9rem;
+    line-height: 1.25rem;
+}
+
+.expand {
+    font-size: .1rem;
+    display: block;
+}
+
+/* LAYOUT */
+
+.main-section {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 1.25rem;
+}
+
+article {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    padding-right: 1rem;
+}
+
+article p:first-of-type{
+    margin-top: 0;
+}
+
+aside {
+    grid-column: 2 / 4;
+    grid-row: 1;
+    padding-left: 2rem;
+    border-left: 1px solid black;
+}
+
+aside p {
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid black;
+}
+
+aside h3:nth-child(1) {
+    margin-top: 0;
+}
+
+.subsection {
+    display: flex;
+    padding-top: 4rem;
+    float: left;
+}
+
+/* LINKS AND NAVIGATION */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a {
+    display: inline-block;
+    margin: 1.25rem 5rem 1.25rem 0;
+    font-size: 1.5rem;
+    font-family: lato;
+    font-weight: bold;
+    color: cadetblue;
+}
+
+nav a:nth-child(2) {
+    font-family: roboto;
+    text-decoration: line-through;
+    text-transform: uppercase;
+    transform: rotate(4deg);
+    color: black;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 3rem;
+}
+
+/* IMAGES AND FIGURES*/
+
+img {
+    width: 100%;
+}
+
+.article-image {
+    width: 40%;
+    padding-right: .75rem;
+    float: left;
+}
+
+figure {
+    margin: 0;
+}
+
+figure:not(:nth-child(1)) {
+    padding-left: .5rem;
+}
+
+.subsection figure img{
+    vertical-align: middle;
+}
+
+figcaption {
+    font-size: .9rem;
+    padding: 1rem;
+    background-color: beige;
+    resize: none;
+}
+
+button {
+    background-color: darkred;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 13px;
+    font-family: ultra;
+    margin-top: 3rem;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    clear: left;
+    float: left;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/*FOOTER AND COPYRIGHT*/
+
+footer a {
+    color: cadetblue;
+    font-family: none;
+}
